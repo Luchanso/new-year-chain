@@ -5,10 +5,6 @@ import Loadable from 'react-loadable';
 
 import loading from 'components/Loading';
 
-let a = {
-  b: 123
-};
-
 const AsyncMain = Loadable({
   loader: () =>
     new Promise(res => setTimeout(() => res(import('pages/Main')), 500)),
