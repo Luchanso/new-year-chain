@@ -5,9 +5,8 @@ import Loadable from 'react-loadable';
 import loading from 'components/Loading';
 
 const AsyncMain = Loadable({
-  loader: () =>
-    new Promise(res => setTimeout(() => res(import('pages/Main')), 500)),
-  loading
+  loader: () => new Promise(res => setTimeout(() => res(import('pages/Main')), 500)),
+  loading,
 });
 
 const App = () => (

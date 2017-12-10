@@ -16,7 +16,7 @@ const Header = styled.div`
 `;
 
 const Mask = styled.div`
-  ${'' /* background-color: rgba(33, 33, 33, 0.6); */} width: 100%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -27,18 +27,18 @@ const Mask = styled.div`
 const styles = {
   input: {
     width: '50%',
-    color: 'white'
-  }
+    color: 'white',
+  },
 };
 
 class Main extends React.Component {
   state = {
-    value: 'Есть меньше в фастфуде'
+    value: 'Есть меньше в фастфуде',
   };
 
   handleSearch = e =>
     this.setState({
-      value: e.target.value
+      value: e.target.value,
     });
 
   render() {
