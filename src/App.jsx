@@ -3,12 +3,19 @@ import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import Loadable from 'react-loadable';
 
-import Loading from 'components/Loading';
+import loading from 'components/Loading';
+
+let a = {
+  b: 123
+};
 
 const AsyncMain = Loadable({
-  loader: () => import('pages/Main'),
-  loading: Loading
+  loader: () =>
+    new Promise(res => setTimeout(() => res(import('pages/Main')), 500)),
+  loading: loading
 });
+
+// const
 
 const App = () => (
   <Router>
