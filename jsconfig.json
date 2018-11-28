@@ -1,6 +1,6 @@
 {
-    "compilerOptions": {
-      "baseUrl": "src",
-      "jsx": "react"
-    }
+  "compilerOptions": {
+    "baseUrl": "src",
+    "jsx": "react"
   }
+}
