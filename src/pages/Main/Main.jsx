@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import styled from 'styled-components';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import ExchangeRates from 'components/ExchangeRates';
 
 import background from './background.jpg';
 
@@ -22,6 +23,13 @@ const Mask = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+`;
+
+const TestPoligon = styled.div`
+  display: flex;
+  background-color: white;
+  min-width: 100vw;
+  min-height: 100vh;
 `;
 
 const styles = {
@@ -44,21 +52,26 @@ class Main extends React.Component {
     const { classes } = this.props;
 
     return (
-      <Header>
-        <Mask>
-          <TextField
-            label="В новом году я обещаю"
-            multiline
-            rows={8}
-            value={this.state.value}
-            onChange={this.handleSearch}
-            margin="normal"
-            fullWidth
-            className={classes.input}
-          />
-          <Button raised>Отправить в блокчеин</Button>
-        </Mask>
-      </Header>
+      <Fragment>
+        <TestPoligon>
+          <ExchangeRates />
+        </TestPoligon>
+        <Header>
+          <Mask>
+            <TextField
+              label="В новом году я обещаю"
+              multiline
+              rows={8}
+              value={this.state.value}
+              onChange={this.handleSearch}
+              margin="normal"
+              fullWidth
+              className={classes.input}
+            />
+            <Button raised>Отправить в блокчеин</Button>
+          </Mask>
+        </Header>
+      </Fragment>
     );
   }
 }
