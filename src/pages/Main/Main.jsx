@@ -57,13 +57,35 @@ const MessageBox = styled.textarea`
   border-radius: 8px;
   border-color: white;
   resize: none;
-  padding: 8px;
+  padding: 8px 40px 8px 8px;
   outline: none;
   overflow-y: hidden;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   box-sizing: border-box;
 `;
+
+const Send = styled.button`
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  border: none;
+  outline: none;
+  background: #6441a5;
+  right: 0;
+  bottom: 0;
+  color: #fff;
+`;
+
+const MessageBlock = styled.div`
+  display: flex;
+  width: 100%;
+  position: relative;
+  box-shadow: 0px 2px 10px 0px #00000054;
+`;
+
+// ХОЧУ НАРИСОВАТЬ ИКОНКУ ОТПРАВКИ ВНУТРИ ИНПУТА
 
 const Main = () => (
   <Fragment>
@@ -75,7 +97,10 @@ const Main = () => (
             {' '}
             <b>Blockchain!</b>
           </Description>
-          <MessageBox>В 2018 году обещаю </MessageBox>
+          <MessageBlock>
+            <MessageBox>В 2018 году обещаю </MessageBox>
+            <Send>➤</Send>
+          </MessageBlock>
         </AlignAction>
       </Column>
       <Column />
