@@ -4,20 +4,9 @@ import styled from 'styled-components';
 import background from './background.jpg';
 
 const Header = styled.div`
-  background-position: center;
-  background-size: cover;
-  background: url(${background}) white;
+  background: center / cover no-repeat url(${background}) white;
   display: flex;
   height: 100vh;
-  width: 100%;
-`;
-
-const Mask = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
   width: 100%;
 `;
 
@@ -103,9 +92,7 @@ const Main = () => (
       </Column>
       <Column />
     </Root>
-    <Header>
-      <Mask />
-    </Header>
+    <Header />
   </Fragment>
 );
 
