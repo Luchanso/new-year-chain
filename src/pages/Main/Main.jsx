@@ -1,6 +1,5 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-// import ExchangeRates from 'components/ExchangeRates';
 
 import background from './background.jpg';
 
@@ -24,10 +23,8 @@ const Mask = styled.div`
 
 const Root = styled.div`
   background: #6441a5;
-  background: -webkit-linear-gradient(to right, #6441a5, #2a0845);
   background: linear-gradient(to right, #6441a5, #2a0845);
   display: flex;
-  background-color: white;
   min-height: 96vh;
   padding: 0 64px;
 `;
@@ -54,6 +51,7 @@ const Description = styled.h1`
 
 const MessageBox = styled.textarea`
   width: 100%;
+  min-height: 165px;
   border-radius: 8px;
   border-color: white;
   resize: none;
@@ -104,7 +102,6 @@ const Main = () => (
         </AlignAction>
       </Column>
       <Column />
-      {/* <ExchangeRates /> */}
     </Root>
     <Header>
       <Mask />
