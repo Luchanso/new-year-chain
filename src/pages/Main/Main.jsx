@@ -1,9 +1,6 @@
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
-import { withStyles } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import ExchangeRates from 'components/ExchangeRates';
+// import ExchangeRates from 'components/ExchangeRates';
 
 import background from './background.jpg';
 
@@ -25,55 +22,23 @@ const Mask = styled.div`
   align-items: center;
 `;
 
-const TestPoligon = styled.div`
+const Root = styled.div`
+  background: #6441a5;
+  background: -webkit-linear-gradient(to right, #6441a5, #2a0845);
+  background: linear-gradient(to right, #6441a5, #2a0845);
   display: flex;
   background-color: white;
   min-width: 100vw;
-  min-height: 100vh;
+  min-height: 96vh;
 `;
 
-const styles = {
-  input: {
-    width: '50%',
-    color: 'white',
-  },
-};
+const Main = () => (
+  <Fragment>
+    <Root>{/* <ExchangeRates /> */}</Root>
+    <Header>
+      <Mask />
+    </Header>
+  </Fragment>
+);
 
-class Main extends React.Component {
-  state = {
-    value: 'Есть меньше в фастфуде',
-  };
-
-  handleSearch = e => this.setState({
-    value: e.target.value,
-  });
-
-  render() {
-    const { classes } = this.props;
-
-    return (
-      <Fragment>
-        <TestPoligon>
-          <ExchangeRates />
-        </TestPoligon>
-        <Header>
-          <Mask>
-            <TextField
-              label="В новом году я обещаю"
-              multiline
-              rows={8}
-              value={this.state.value}
-              onChange={this.handleSearch}
-              margin="normal"
-              fullWidth
-              className={classes.input}
-            />
-            <Button raised>Отправить в блокчеин</Button>
-          </Mask>
-        </Header>
-      </Fragment>
-    );
-  }
-}
-
-export default withStyles(styles)(Main);
+export default Main;
