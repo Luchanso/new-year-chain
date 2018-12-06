@@ -4,21 +4,21 @@ import styled from 'styled-components';
 import background from './background.jpg';
 
 const Header = styled.div`
-  display: flex;
-  width: 100%;
-  height: 100vh;
-  background: url(${background}) white;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
+  background: url(${background}) white;
+  display: flex;
+  height: 100vh;
+  width: 100%;
 `;
 
 const Mask = styled.div`
-  width: 100%;
-  height: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
+  height: 100%;
   justify-content: center;
-  align-items: center;
+  width: 100%;
 `;
 
 const Root = styled.div`
@@ -34,53 +34,54 @@ const Column = styled.div`
 `;
 
 const AlignAction = styled.div`
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: calc(100% - 64px);
 `;
 
 const Description = styled.h1`
-  font-size: 64px;
+  color: #fff;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
     'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #fff;
+  font-size: 64px;
   font-weight: 200;
 `;
 
 const MessageBox = styled.textarea`
-  width: 100%;
-  min-height: 165px;
-  border-radius: 8px;
+  border-bottom-right-radius: 16px;
   border-color: white;
-  resize: none;
-  padding: 8px 40px 8px 8px;
-  outline: none;
-  overflow-y: hidden;
+  border-radius: 8px;
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  box-sizing: border-box;
+  min-height: 165px;
+  outline: none;
+  overflow-y: hidden;
+  padding: 8px 40px 8px 8px;
+  resize: none;
+  width: 100%;
 `;
 
 const Send = styled.button`
-  position: absolute;
-  width: 32px;
-  height: 32px;
-  margin: 0;
-  border: none;
-  outline: none;
   background: #6441a5;
-  right: 0;
+  border-bottom-right-radius: 8px;
+  border: none;
   bottom: 0;
   color: #fff;
+  height: 32px;
+  margin: 0;
+  outline: none;
+  position: absolute;
+  right: 0;
 `;
 
 const MessageBlock = styled.div`
-  display: flex;
-  width: 100%;
-  position: relative;
   box-shadow: 0px 2px 10px 0px #00000054;
+  display: flex;
+  position: relative;
+  width: 100%;
 `;
 
 // ХОЧУ НАРИСОВАТЬ ИКОНКУ ОТПРАВКИ ВНУТРИ ИНПУТА
@@ -97,7 +98,7 @@ const Main = () => (
           </Description>
           <MessageBlock>
             <MessageBox>В 2018 году обещаю </MessageBox>
-            <Send>➤</Send>
+            <Send>Отправить ➤</Send>
           </MessageBlock>
         </AlignAction>
       </Column>
