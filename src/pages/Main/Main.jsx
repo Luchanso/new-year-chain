@@ -50,9 +50,8 @@ const Description = styled.h1`
 `;
 
 const MessageBox = styled.textarea`
-  border-bottom-right-radius: 16px;
   border-color: white;
-  border-radius: 8px;
+  border-radius: 8px 8px 16px 8px;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
