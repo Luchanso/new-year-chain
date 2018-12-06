@@ -1,3 +1,8 @@
+/*
+ * Хотелось бы сделать ограничение по длине текста которое будет отображаться снизу
+ * И вообще лучше сделать отдельную панель внизу инпута.
+ */
+
 import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
@@ -39,7 +44,8 @@ const Description = styled.h1`
 `;
 
 const MessageBox = styled.textarea`
-  border-color: white;
+  border-width: 0;
+  padding: 0 12px;
   border-radius: 8px 8px 16px 8px;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
@@ -47,7 +53,7 @@ const MessageBox = styled.textarea`
   min-height: 165px;
   outline: none;
   overflow-y: hidden;
-  padding: 8px 40px 8px 8px;
+  padding: 8px;
   resize: none;
   width: 100%;
 `;
@@ -71,8 +77,6 @@ const MessageBlock = styled.div`
   position: relative;
   width: 100%;
 `;
-
-// ХОЧУ НАРИСОВАТЬ ИКОНКУ ОТПРАВКИ ВНУТРИ ИНПУТА
 
 const Main = () => (
   <Fragment>
