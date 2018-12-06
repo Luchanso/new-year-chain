@@ -67,6 +67,7 @@ const Send = styled.button`
   height: 32px;
   margin: 0;
   outline: none;
+  padding: 0 12px;
   position: absolute;
   right: 0;
 `;
