@@ -20,11 +20,11 @@ const Root = styled.div`
   background: linear-gradient(to right, #6441a5, #2a0845);
   display: flex;
   min-height: 96vh;
-  padding: 0 64px;
 `;
 
 const Column = styled.div`
   width: 50%;
+  /* padding: 0 32px 0 64px; */
 `;
 
 const AlignAction = styled.div`
