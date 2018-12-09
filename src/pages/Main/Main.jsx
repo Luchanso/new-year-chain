@@ -24,7 +24,7 @@ const Root = styled.div`
 
 const Column = styled.div`
   width: 50%;
-  /* padding: 0 32px 0 64px; */
+  padding: 0 32px;
 `;
 
 const AlignAction = styled.div`
