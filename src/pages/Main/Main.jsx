@@ -46,7 +46,7 @@ const Description = styled.h1`
 const MessageBox = styled.textarea`
   border-width: 0;
   padding: 0 12px;
-  border-radius: 8px 8px 16px 8px;
+  border-radius: 8px;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -60,16 +60,16 @@ const MessageBox = styled.textarea`
 
 const Send = styled.button`
   background: #6441a5;
-  border-bottom-right-radius: 8px;
+  border-radius: 8px;
   border: none;
-  bottom: 0;
+  bottom: 4px;
   color: #fff;
   height: 32px;
   margin: 0;
   outline: none;
   padding: 0 12px;
   position: absolute;
-  right: 0;
+  right: 4px;
 `;
 
 const MessageBlock = styled.div`
