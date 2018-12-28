@@ -3,17 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "apollo-boost": "^0.1.22",
-    "graphql": "^14.0.2",
-    "graphql-tag": "^2.10.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.3.0",
-    "react-apollo": "^2.3.2",
-    "react-dom": "^16.3.0",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
+    "apollo-boost": "0.1.22",
+    "graphql": "14.0.2",
+    "graphql-tag": "2.10.0",
+    "prop-types": "15.6.2",
+    "react": "16.6.3",
+    "react-apollo": "2.3.2",
+    "react-dom": "16.6.3",
+    "react-router": "4.3.1",
+    "react-router-dom": "4.3.1",
     "react-scripts": "2.1.2",
-    "styled-components": "^4.1.2"
+    "styled-components": "4.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,13 +34,13 @@
   "devDependencies": {
     "babel-eslint": "10.0.1",
     "eslint": "5.6.0",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.8.0",
-    "eslint-plugin-jsx-a11y": "^6.0.2",
-    "eslint-plugin-react": "^7.5.1",
-    "husky": "^1.2.0",
-    "lint-staged": "^8.1.0",
-    "prettier": "^1.9.1"
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-plugin-import": "2.14.0",
+    "eslint-plugin-jsx-a11y": "6.1.2",
+    "eslint-plugin-react": "7.11.1",
+    "husky": "1.2.0",
+    "lint-staged": "8.1.0",
+    "prettier": "1.15.2"
   },
   "browserslist": [
     ">0.2%",
