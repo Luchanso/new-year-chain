@@ -4,7 +4,7 @@
  */
 
 import React, { Fragment } from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import background from './background.jpg';
 
@@ -16,15 +16,24 @@ const Header = styled.div`
 `;
 
 const Root = styled.div`
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    'Open Sans', 'Helvetica Neue', sans-serif;
   background: #6441a5;
   background: linear-gradient(to right, #6441a5, #2a0845);
   display: flex;
-  min-height: 96vh;
+  min-height: 100vh;
 `;
 
-const Column = styled.div`
+const LeftColumn = styled.div`
   width: 50%;
-  padding: 0 32px;
+  padding-left: 6%;
+  padding-right: 3%;
+`;
+
+const RightColumn = styled.div`
+  width: 50%;
+  padding-right: 6%;
+  padding-left: 3%;
 `;
 
 const AlignAction = styled.div`
@@ -60,16 +69,52 @@ const MessageBox = styled.textarea`
 
 const Send = styled.button`
   background: #6441a5;
-  border-radius: 8px;
+  border-radius: 50%;
   border: none;
   bottom: 4px;
   color: #fff;
   height: 32px;
+  width: 32px;
+  line-height: 0;
   margin: 0;
   outline: none;
-  padding: 0 12px;
   position: absolute;
   right: 4px;
+
+  :hover {
+    cursor: pointer;
+    background: #7243c7;
+  }
+`;
+
+const TextLength = styled.span`
+  left: 8px;
+  bottom: 8px;
+  position: absolute;
+  color: #9e9e9e;
+  font-size: 12px;
+  user-select: none;
+`;
+
+const flashAnimation = keyframes`
+  from {
+    opacity 0.3;
+  }
+
+  to {
+    opacity 1;
+  }
+`;
+
+const ShowMore = styled.span`
+  user-select: none;
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  bottom: 16px;
+  right: 50%;
+  cursor: pointer;
+
+  animation: ${flashAnimation} 3s linear infinite alternate;
 `;
 
 const MessageBlock = styled.div`
@@ -82,7 +127,7 @@ const MessageBlock = styled.div`
 const Main = () => (
   <Fragment>
     <Root>
-      <Column>
+      <LeftColumn data-name="LeftColumn">
         <AlignAction>
           <Description>
             Отправь новогоднее обещание в
@@ -90,12 +135,17 @@ const Main = () => (
             <b>Blockchain!</b>
           </Description>
           <MessageBlock>
-            <MessageBox>В 2018 году обещаю </MessageBox>
-            <Send>Отправить ➤</Send>
+            <MessageBox defaultValue="В 2018 году обещаю" />
+            <TextLength>0 / 512</TextLength>
+            <Send>➤</Send>
           </MessageBlock>
         </AlignAction>
-      </Column>
-      <Column />
+      </LeftColumn>
+      <RightColumn>
+        Examples
+      </RightColumn>
+      {/* Долэно скролить на следуюзий экран */}
+      <ShowMore>↓ подробнее ↓</ShowMore>
     </Root>
     <Header />
   </Fragment>

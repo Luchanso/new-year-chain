@@ -19,5 +19,19 @@ module.exports = {
     "browser": true,
     "node": true,
     "jest": true,
+  },
+  "rules": {
+    "no-restricted-imports": [
+      "warn",
+      {
+        "paths": [{
+          "name": "styled components",
+          "message": "Please change styled-components/macro on 'styled-components'."
+        }],
+        "patterns": [
+          "styled-components/macro"
+        ]
+      }
+    ]
   }
 };
