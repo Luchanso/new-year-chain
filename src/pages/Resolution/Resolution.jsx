@@ -29,7 +29,7 @@ class Resolution extends React.Component {
         {({ loading, error, data: { promise } }) => (
           <Root>
             <Content>
-              {!loading && !error && (
+              {!loading && !error && promise && (
                 <React.Fragment>
                   <h2>{hash}</h2>
                   <p>{promise.text}</p>
@@ -43,6 +43,7 @@ class Resolution extends React.Component {
                   <code>{error.toString()}</code>
                 </p>
               )}
+              {!promise && <p> 404 - Новогоднее обещание не найдено (ಥ﹏ಥ)</p>}
             </Content>
           </Root>
         )}
