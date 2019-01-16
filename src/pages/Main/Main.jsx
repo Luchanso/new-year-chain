@@ -5,8 +5,33 @@
 
 import React, { Fragment } from 'react';
 import styled, { keyframes } from 'styled-components';
+import {
+  CardCarouselOffset,
+  RemoveBodyScroll,
+} from 'components/CardsCarousel/Style';
+import CardsCarousel from 'components/CardsCarousel';
+import { PLATE_HEIGHT } from 'components/Card/Style';
+import BgElement from './Background';
 
 import background from './background.jpg';
+
+// const PALETTE = [
+//   '#6441A5',
+//   '#BD4199',
+//   '#F5597F',
+//   '#FF8964',
+//   '#FFC158',
+//   '#F9F871',
+// ];
+
+const PALETTE = {
+  primary: {
+    shades: ['#6441A5', '#8760C8', '#AA81EC', '#CEA2FF', '#F3C5FF'],
+  },
+  secondory: {
+    shades: ['#FFC158', '#CD952C', '#9D6B00', '#6E4400', '#472000'],
+  },
+};
 
 const Header = styled.div`
   background: center / cover no-repeat url(${background}) white;
@@ -16,10 +41,17 @@ const Header = styled.div`
 `;
 
 const Root = styled.div`
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background: #6441a5;
-  background: linear-gradient(to right, #6441a5, #2a0845);
+  background: linear-gradient(
+    to right top,
+    #6441a5,
+    #7550b6,
+    #8760c8,
+    #9870da,
+    #aa81ec
+  );
   display: flex;
   min-height: 100vh;
 `;
@@ -32,7 +64,7 @@ const LeftColumn = styled.div`
 
 const RightColumn = styled.div`
   width: 50%;
-  padding-right: 6%;
+  padding-right: 8%;
   padding-left: 3%;
 `;
 
@@ -46,8 +78,8 @@ const AlignAction = styled.div`
 
 const Description = styled.h1`
   color: #fff;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
-    'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 64px;
   font-weight: 200;
 `;
@@ -68,7 +100,7 @@ const MessageBox = styled.textarea`
 `;
 
 const Send = styled.button`
-  background: #6441a5;
+  background: ${PALETTE.secondory.shades[0]};
   border-radius: 50%;
   border: none;
   bottom: 4px;
@@ -83,7 +115,7 @@ const Send = styled.button`
 
   :hover {
     cursor: pointer;
-    background: #7243c7;
+    background: ${PALETTE.secondory.shades[1]};
   }
 `;
 
@@ -102,7 +134,17 @@ const flashAnimation = keyframes`
   }
 
   to {
-    opacity 1;
+    opacity 0.9;
+  }
+`;
+
+const moveAnimation = keyframes`
+  from {
+    transform: translate(0, -1px);
+  }
+
+  to {
+    transform: translate(0, 3px);
   }
 `;
 
@@ -114,7 +156,8 @@ const ShowMore = styled.span`
   right: 50%;
   cursor: pointer;
 
-  animation: ${flashAnimation} 3s linear infinite alternate;
+  animation: ${flashAnimation} 4s cubic-bezier(0.4, 0, 1, 1) infinite alternate,
+    ${moveAnimation} 2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate;
 `;
 
 const MessageBlock = styled.div`
@@ -124,9 +167,34 @@ const MessageBlock = styled.div`
   width: 100%;
 `;
 
+const Layout = styled.div`
+  position: absolute;
+  top: calc(50% - ${PLATE_HEIGHT / 2}px);
+  right: 0;
+`;
+
+const cards = [
+  {
+    hash: '216315e',
+    text:
+      'Обещаю начать ходить в спорт зал, записаться на курсы английского языка и по чаще навещать родителей.',
+    date: new Date('05/01/2019, 23:56:01'),
+  },
+  { hash: '7075ef7', text: '', date: new Date('05/01/2019, 23:56:22') },
+  { hash: '5622edb', text: '', date: new Date('05/01/2019, 23:56:41') },
+  {
+    hash: '23b8bd2',
+    text:
+      'Купить дочке рыжую собаку, найти новою работу, не есть после 8 часов...',
+    date: new Date('05/01/2019, 23:56:04'),
+  },
+  { hash: '5889f4e', text: '', date: new Date('05/01/2019, 23:56:52') },
+];
+
 const Main = () => (
   <Fragment>
     <Root>
+      {/* <BgElement /> */}
       <LeftColumn data-name="LeftColumn">
         <AlignAction>
           <Description>
@@ -135,17 +203,22 @@ const Main = () => (
             <b>Blockchain!</b>
           </Description>
           <MessageBlock>
-            <MessageBox defaultValue="В 2018 году обещаю" />
-            <TextLength>0 / 512</TextLength>
+            <MessageBox defaultValue="В 2019 году обещаю " />
+            <TextLength>35 / 512</TextLength>
             <Send>➤</Send>
           </MessageBlock>
         </AlignAction>
       </LeftColumn>
       <RightColumn>
-        Examples
+        <Layout>
+          <CardCarouselOffset>
+            <RemoveBodyScroll />
+            <CardsCarousel cards={cards} />
+          </CardCarouselOffset>
+        </Layout>
       </RightColumn>
-      {/* Долэно скролить на следуюзий экран */}
-      <ShowMore>↓ подробнее ↓</ShowMore>
+      {/* Должно скролить на следующий экран */}
+      <ShowMore>↓ ещё ↓</ShowMore>
     </Root>
     <Header />
   </Fragment>

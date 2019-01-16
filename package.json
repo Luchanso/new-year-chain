@@ -13,14 +13,17 @@
     "react-router": "4.3.1",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.2",
-    "styled-components": "4.1.2"
+    "styled-components": "4.1.2",
+    "three": "^0.99.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "lint": "eslint ./src --ext .js --ext .jsx"
+    "lint": "eslint ./src --ext .js --ext .jsx",
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "husky": {
     "pre-commit": "npm test"
@@ -41,7 +44,13 @@
     "eslint-plugin-react": "7.11.1",
     "husky": "1.3.1",
     "lint-staged": "8.1.0",
-    "prettier": "1.15.2"
+    "prettier": "1.15.2",
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.4",
+    "@storybook/react": "^4.1.4",
+    "@storybook/addon-actions": "^4.1.4",
+    "@storybook/addon-links": "^4.1.4",
+    "@storybook/addons": "^4.1.4"
   },
   "browserslist": [
     ">0.2%",
